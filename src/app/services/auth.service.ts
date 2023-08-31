@@ -24,13 +24,15 @@ export class AuthService {
         this.user_state = true;
         sessionStorage.setItem('user', this.auth_token);
         this.state_change.next(true);
-        await this.weatherService.getCurrentLocation();
-        const location = {
-          latitude: this.weatherService.lat,
-          longitude: this.weatherService.lon,
-        };
-        this.loadingService.toggleLoading(false);
-        this.router.navigate(['/weather'], { queryParams: location });
+        const coords = await this.weatherService.getCurrentLocation();
+        if (coords) {
+          const location = {
+            latitude: this.weatherService.lat,
+            longitude: this.weatherService.lon,
+          };
+          this.router.navigate(['/weather'], { queryParams: location });
+        }
+        //this.loadingService.toggleLoading(false);
       } else console.log('invalid credientials');
     } catch (err) {
       this.router.navigate(['/weather']);

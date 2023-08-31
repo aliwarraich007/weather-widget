@@ -24,20 +24,20 @@ export class AppComponent implements OnInit {
   ) {}
   title = 'forenax-angular';
   ngOnInit(): void {
-    // this.router.events
-    //   .pipe(
-    //     filter((event: Event) => {
-    //       return (
-    //         event instanceof NavigationEnd ||
-    //         event instanceof NavigationStart ||
-    //         event instanceof NavigationCancel ||
-    //         event instanceof NavigationError
-    //       );
-    //     })
-    //   )
-    //   .subscribe((event: Event) => {
-    //     this.loadingService.loading = event instanceof NavigationStart;
-    //   });
+    this.router.events
+      .pipe(
+        filter((event: Event) => {
+          return (
+            event instanceof NavigationEnd ||
+            event instanceof NavigationStart ||
+            event instanceof NavigationCancel ||
+            event instanceof NavigationError
+          );
+        })
+      )
+      .subscribe((event: Event) => {
+        this.loadingService.loading = event instanceof NavigationStart;
+      });
     this.authService.autologin();
   }
 }

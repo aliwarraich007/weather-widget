@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })
-export class AuthComponent implements OnInit, AfterViewChecked {
+export class AuthComponent implements OnInit {
   authForm!: FormGroup;
   message!: string;
   constructor(private auth: AuthService) {}
@@ -17,10 +17,6 @@ export class AuthComponent implements OnInit, AfterViewChecked {
       username: new FormControl('forenax', Validators.required),
       password: new FormControl('forenax', Validators.required),
     });
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('viwerex');
   }
 
   onSubmit() {
