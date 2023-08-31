@@ -1,0 +1,132 @@
+@import "../../styles/placeholders/placeholders";
+@import "../../styles/variables/colors";
+@import "../../styles/variables/breakpoints";
+@import "../../styles/mixins/mixins";
+.container {
+  padding: 0 1rem 0 1rem;
+  @include responsive($sm) {
+    padding-top: calc(1rem + 10px);
+  }
+  .form-container {
+    margin-bottom: 1rem;
+    max-width: 250px;
+    .form-group {
+      @extend %form-group;
+      label {
+        @extend %form-label;
+      }
+      .form-control {
+        border: 1px solid $indigo;
+        @extend %form-control;
+      }
+    }
+
+    .error-message {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      text-align: center;
+      color: $red;
+      background-color: $light-red;
+      border-radius: 0.3rem;
+      margin-top: 1rem;
+      p {
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  height: 100%;
+  @extend %flex-row-center;
+  flex-direction: column;
+  .widget-container {
+    @extend %flex-row-center;
+    width: 100%;
+    .widget {
+      position: relative;
+      overflow: hidden;
+      background: rgb(13, 67, 166);
+      background: linear-gradient(
+        183deg,
+        rgba(13, 67, 166, 1) 17%,
+        rgba(20, 0, 91, 1) 65%
+      );
+      width: 100%;
+      color: white;
+      max-width: 900px;
+      padding: 1rem;
+      border-radius: 1rem;
+      .main-widget {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.upper-widget {
+  display: flex;
+  margin-bottom: 2rem;
+  .icon-col {
+    margin-right: 2rem;
+    .icon {
+      max-width: 100px;
+      height: 100px;
+    }
+  }
+  .details-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    legend {
+      font-size: medium;
+    }
+    span {
+      font-size: smaller;
+      font-weight: 300;
+      margin: 0.2rem 0 0.2rem 0;
+    }
+  }
+}
+
+.lower-widget {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  @include responsive($sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  ul {
+    @include responsive($sm) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    li {
+      @include responsive($sm) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+      }
+      font-size: smaller;
+      padding: 0.1rem;
+      margin: 0.2rem 0 0.2rem 0;
+      text-align: center;
+      .icon_small {
+        max-width: 70px;
+        max-height: 70px;
+        height: 70px;
+        width: 70px;
+        height: auto;
+      }
+      .hi-temp {
+        color: $red;
+      }
+      .lo-temp {
+        color: $aqua;
+      }
+    }
+  }
+}

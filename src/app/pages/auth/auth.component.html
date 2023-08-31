@@ -1,0 +1,31 @@
+<section class="container">
+  <app-card>
+    <form [formGroup]="authForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          type="text"
+          formControlName="username"
+          autocomplete="username"
+          class="form-control"
+          placeholder="forenax"
+        />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+          class="form-control"
+          placeholder="forenax"
+        />
+      </div>
+      <div class="form-group">
+        <app-button type="button" title="submit" (clicked)="onSubmit()"
+          >sign in</app-button
+        >
+      </div>
+    </form>
+  </app-card>
+</section>

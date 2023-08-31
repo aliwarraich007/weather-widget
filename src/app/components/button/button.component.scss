@@ -1,0 +1,20 @@
+@import "../../styles/variables/colors";
+@import "../../styles/placeholders/placeholders";
+@import "../../styles/mixins/mixins";
+.button-white {
+  @extend %button-default;
+  @extend %button-default-transition;
+  @include btnColor(2px, $white, $white);
+}
+
+.button-indigo {
+  @extend %button-default;
+  @extend %button-default-transition;
+  @include btnColor(2px, $indigo, $indigo);
+}
+
+.disabled {
+  @extend %button-default;
+  cursor: not-allowed;
+  @include btnColor(2px, $grey, $grey);
+}

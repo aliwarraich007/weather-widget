@@ -1,0 +1,22 @@
+@import "../../styles/placeholders/placeholders";
+section {
+  @extend %section;
+  @extend %gradient-1;
+  .form-group {
+    @extend %form-group;
+
+    label {
+      @extend %form-label;
+    }
+    .form-control {
+      @extend %form-control;
+    }
+  }
+}
+input.ng-touched.ng-invalid {
+  @extend %invalid-form;
+}
+
+input.ng-touched.ng-valid {
+  @extend %valid-form;
+}

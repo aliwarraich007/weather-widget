@@ -1,0 +1,10 @@
+<nav>
+  <ul>
+    <li>
+      <a *ngIf="user" (click)="onClick_logout()">Sign out</a>
+    </li>
+    <li>
+      <a *ngIf="!user">Weather Widget</a>
+    </li>
+  </ul>
+</nav>

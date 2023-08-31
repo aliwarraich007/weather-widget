@@ -1,0 +1,78 @@
+<section class="container">
+  <div class="form-container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input
+          formControlName="cityName"
+          class="form-control"
+          type="text"
+          placeholder="karachi"
+        />
+        <app-button
+          [disabled]="!searchForm.valid"
+          class="button-indigo"
+          type="submit"
+          title="Submit"
+          >Submit</app-button
+        >
+      </div>
+    </form>
+    <div *ngIf="error_message" class="error-message">
+      <p>{{ error_message }}</p>
+    </div>
+  </div>
+  <div *ngIf="!error_message.length" class="widget-container">
+    <div class="widget">
+      <app-rain-effect *ngIf="response.current.weather[0].main === 'Rain'" />
+      <div class="main-widget">
+        <div class="upper-widget">
+          <div class="icon-col">
+            <img
+              class="icon"
+              src="../../../assets/animated-icons/{{ icon }}.svg"
+            />
+          </div>
+          <div class="details-col">
+            <legend>{{ response.city }}</legend>
+            <span>
+              {{ response.current.temp.toFixed() }}
+              º C</span
+            >
+            <span class="label-header">
+              Humidity: {{ response.current.humidity }} %</span
+            >
+            <span class="label-header"> UVI: {{ response.current.uvi }} </span>
+            <span>
+              Wind:
+              {{ convertWindDirection(response.current.wind_deg) }}
+              {{ response.current.wind_speed }} kmh
+            </span>
+          </div>
+        </div>
+        <div class="lower-widget">
+          <div *ngFor="let item of response.daily" class="forcast-col">
+            <ul>
+              <li>
+                <span>{{ getDay(item.dt) }}</span>
+              </li>
+              <li>
+                <img
+                  src="../../../assets/animated-icons/{{
+                    item.weather[0].icon
+                  }}.svg"
+                  class="icon_small"
+                />
+              </li>
+              <li>
+                <span class="hi-temp">{{ item.temp.max.toFixed() }} º</span>
+              </li>
+              <li>
+                <span class="lo-temp"> {{ item.temp.min.toFixed() }} º</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
