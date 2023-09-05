@@ -1,6 +1,4 @@
 <h2>To run the tests:</h2>
-<hr>
-
 <ol>
   <li>
     ng test --include ./src/app/services/api/weather.api.service.spec.ts
