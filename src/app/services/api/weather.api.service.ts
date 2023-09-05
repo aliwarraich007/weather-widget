@@ -12,7 +12,12 @@ export class WeatherService {
   lat: string = '34.0522';
   lon: string = '-118.243';
   searchCity: string = '';
+  weatherData!: Forcast;
   constructor(private http: HttpClient) {}
+
+  getWeatherData() {
+    return this.weatherData;
+  }
 
   async getCurrentLocation() {
     return new Promise<GeolocationCoordinates>((resolve, reject) => {
@@ -50,6 +55,7 @@ export class WeatherService {
           this.reverse_geocoding().subscribe((data) => {
             item.city = data[0].name + ' ' + data[0].country;
           });
+          this.weatherData = item;
         })
       );
   }

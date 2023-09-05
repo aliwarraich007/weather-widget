@@ -1,0 +1,20 @@
+@import "../../styles/mixins/mixins";
+@import "../../styles/variables/breakpoints";
+@import "../../styles/placeholders/placeholders";
+.container {
+  padding: 3rem 1rem 0 1rem;
+  @include responsive($sm) {
+    padding-top: calc(1rem + 10px);
+  }
+  @extend %section;
+
+  .heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .chart-resp {
+    max-width: 700px;
+    max-height: 400px;
+  }
+}

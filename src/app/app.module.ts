@@ -12,6 +12,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { MainComponent } from 'src/app/layout/main/main.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { WeatherModule } from './helper/modules/weather.module';
+import { DailyChartComponent } from './pages/daily-chart/daily-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { WeatherModule } from './helper/modules/weather.module';
     CardComponent,
     LoaderComponent,
     AuthComponent,
+    DailyChartComponent,
   ],
   imports: [
     BrowserModule,

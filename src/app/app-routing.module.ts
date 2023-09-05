@@ -6,6 +6,7 @@ import { forecastResolver } from './services/resolver/forecast.resolver';
 import { AuthenticatedGuard } from './guards/authenticated.guard';
 import { WeatherWidgetComponent } from './pages/weather-widget/weather-widget.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { DailyChartComponent } from './pages/daily-chart/daily-chart.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,6 +23,11 @@ const routes: Routes = [
     path: 'auth',
     component: AuthComponent,
     canActivate: [AuthenticatedGuard],
+  },
+  {
+    path: 'forcast-chart',
+    component: DailyChartComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

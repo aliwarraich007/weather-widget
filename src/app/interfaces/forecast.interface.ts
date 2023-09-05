@@ -18,6 +18,7 @@ interface current {
 }
 
 interface daily {
+  humidity: number;
   dt: number;
   sunrise: number;
   sunset: number;
