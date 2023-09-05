@@ -75,19 +75,4 @@ export class WeatherWidgetComponent implements OnInit {
     else if (deg === 270) return 'W';
     else return 'NW';
   }
-
-  getDay(timestamp: number) {
-    const day = new Date(timestamp * 1000).getDay();
-    const day_names = [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-    ];
-
-    return new Date().getDay() === day ? 'Today' : day_names[day];
-  }
 }

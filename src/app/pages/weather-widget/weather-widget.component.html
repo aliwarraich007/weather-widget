@@ -53,7 +53,7 @@
           <div *ngFor="let item of response.daily" class="forcast-col">
             <ul>
               <li>
-                <span>{{ getDay(item.dt) }}</span>
+                <span>{{ item.dt | dayConversion }}</span>
               </li>
               <li>
                 <img

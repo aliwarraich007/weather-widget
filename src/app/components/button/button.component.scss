@@ -16,5 +16,8 @@
 .disabled {
   @extend %button-default;
   cursor: not-allowed;
+  &:hover {
+    transform: none;
+  }
   @include btnColor(2px, $grey, $grey);
 }

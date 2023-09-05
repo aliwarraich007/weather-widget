@@ -2,6 +2,9 @@
 @import "../../styles/variables/colors";
 @import "../../styles/variables/breakpoints";
 @import "../../styles/mixins/mixins";
+::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
 .container {
   padding: 0 1rem 0 1rem;
   @include responsive($sm) {
@@ -52,11 +55,18 @@
       width: 100%;
       color: white;
       max-width: 900px;
+      width: 632px;
+      height: 311px;
       padding: 1rem;
       border-radius: 1rem;
+      @include responsive($sm) {
+        width: 375px;
+        height: 634px;
+      }
       .main-widget {
         display: flex;
         flex-direction: column;
+        height: 100%;
       }
     }
   }
@@ -68,8 +78,8 @@
   .icon-col {
     margin-right: 2rem;
     .icon {
-      max-width: 100px;
-      height: 100px;
+      max-width: 117px;
+      height: 117px;
     }
   }
   .details-col {
@@ -89,6 +99,7 @@
 }
 
 .lower-widget {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   @include responsive($sm) {
