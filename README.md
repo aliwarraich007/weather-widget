@@ -13,7 +13,6 @@
 
 <h2>To login:</h2>
 just press the login button, I've given default username password to the feilds already.
-<hr>
 <h2>Usage flow:</h2>
 <ol>
 <li> 
