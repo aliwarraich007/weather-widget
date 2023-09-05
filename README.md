@@ -1,7 +1,16 @@
 <h2>To run the tests:</h2>
 <hr>
-1. ng test --include ./src/app/services/api/weather.api.service.spec.ts
-2. ng test --include ./src/app/services/api/pip.spec.ts
+
+<ol>
+  <li>
+    ng test --include ./src/app/services/api/weather.api.service.spec.ts
+  </li>
+  <li>
+  ng test --include ./src/app/services/api/pipe.spec.ts
+</li> 
+</ol>
+
+
 <h2>To login:</h2>
 just press the login button, I've given default username password to the feilds already.
 <hr>
@@ -14,8 +23,6 @@ After logging in, the system will ask to use your current location to fetch weat
 You can search for any city with valid name, if it exists, the system will fetch current weather for that city, however if it's invalid, an error message will be displayed.
 </li>
 <li>
-
-<hr>
 Deployment link is in the repositery about section.
 </li>
 </ol>
